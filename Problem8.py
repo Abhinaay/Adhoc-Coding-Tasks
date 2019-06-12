@@ -8,7 +8,7 @@
 import subprocess
 from gtts import gTTS
 import os
-
+import win32com.client
 
 
 osstdout=2
@@ -19,7 +19,7 @@ try:
 except:
             a=2
 
-
+speaker=win32com.client.Dispatch("SAPI.SpVoice")
 if osstdout != 0 :
     print('Command Not Found !!')
 else :
@@ -31,12 +31,14 @@ else :
             print("Don't repeat this command again....")
             
             s = "Don't repeat this command again...."
-            file = "file.mp3"
+            speaker.Speak(s)
+
+            #file = "file.mp3"
 
             # initialize tts, create mp3 and play
-            tts = gTTS(s, 'en')
-            tts.save(file)
-            os.system("mpg123 D:\\git-repos\\Python-Challenges-Adhoc\\" + file)
+            #tts = gTTS(s, 'en')
+            #tts.save(file)
+            #os.system("mpg123 D:\\git-repos\\Python-Challenges-Adhoc\\" + file)
            
             
            

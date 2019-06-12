@@ -6,8 +6,6 @@
 #iii)  if the input command is repeated by user give him voice note not to do this again
 
 import subprocess
-from gtts import gTTS
-import os
 import win32com.client
 
 
@@ -33,14 +31,6 @@ else :
             s = "Don't repeat this command again...."
             speaker.Speak(s)
 
-            #file = "file.mp3"
-
-            # initialize tts, create mp3 and play
-            #tts = gTTS(s, 'en')
-            #tts.save(file)
-            #os.system("mpg123 D:\\git-repos\\Python-Challenges-Adhoc\\" + file)
-           
-            
            
 
             

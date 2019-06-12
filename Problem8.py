@@ -9,16 +9,16 @@ import subprocess
 import win32com.client
 
 
-osstdout=2
-read =input("Enter : ")
+out=2
+read =input("Enter Command: ")
 #check for command correctness...
 try:
-            osstdout = subprocess.check_call(read.split())
+            out = subprocess.check_call(read.split())
 except:
             a=2
 
 speaker=win32com.client.Dispatch("SAPI.SpVoice")
-if osstdout != 0 :
+if out != 0 :
     print('Command Not Found !!')
 else :
     #If Command is correct ...

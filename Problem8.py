@@ -6,21 +6,19 @@
 #iii)  if the input command is repeated by user give him voice note not to do this again
 
 import subprocess
-from gtts import gTTS
-import os
+import win32com.client
 
 
-
-osstdout=2
-read =input("Enter : ")
+out=2
+read =input("Enter Command: ")
 #check for command correctness...
 try:
-            osstdout = subprocess.check_call(read.split())
+            out = subprocess.check_call(read.split())
 except:
             a=2
 
-
-if osstdout != 0 :
+speaker=win32com.client.Dispatch("SAPI.SpVoice")
+if out != 0 :
     print('Command Not Found !!')
 else :
     #If Command is correct ...
@@ -31,14 +29,8 @@ else :
             print("Don't repeat this command again....")
             
             s = "Don't repeat this command again...."
-            file = "file.mp3"
+            speaker.Speak(s)
 
-            # initialize tts, create mp3 and play
-            tts = gTTS(s, 'en')
-            tts.save(file)
-            os.system("mpg123 D:\\git-repos\\Python-Challenges-Adhoc\\" + file)
-           
-            
            
 
             

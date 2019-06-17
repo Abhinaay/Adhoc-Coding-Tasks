@@ -6,7 +6,7 @@ recv_port=4444
 
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
-while 4 >  3  :
+while True  :
 	msg=input("Enter your message :   ")
 	if msg == 'quit':
 		exit()	

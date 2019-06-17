@@ -14,7 +14,7 @@ import textwrap
 
 s=""
 j=0
-for i in range(20):
+for i in range(500):
 	s+=getch.getch()
 sorted_dict1=dict()
 sorted_dict2=dict()	
@@ -32,8 +32,7 @@ def freqword(str):
 		        str2.append(i)  
 	    # count the frequency of each word          
 	for i in range(0, len(str2)):
-		#print('Frequency of', str2[i], 'is :', str.count(str2[i]),'\n')    
-	        dict1[str2[i]]=str.count(str2[i])
+		dict1[str2[i]]=str.count(str2[i])
 	sorted_dict1 = sorted(dict1.items(), key=operator.itemgetter(1),reverse=True)
 	print('\nFrequency of words in descending order :\n ')
 	print(sorted_dict1)
@@ -70,4 +69,4 @@ for i in dict1 :
 
 
 
-print('\nFinal String : \n',textwrap.shorten(s,width=20,placeholder=''))
+print('\nFinal String : \n',textwrap.shorten(s,width=500,placeholder=''))
